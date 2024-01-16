@@ -75,7 +75,11 @@ const SearchComponent = () => {
             value={searchInput}
             onChange={handleInputChange}
             placeholder="Add new users"
-            onKeyDown={handleBackspace}
+            onKeyDown={(event) => {
+              if (event.key === "Backspace") {
+                handleBackspace();
+              }
+            }}
             onClick={() => setShowSuggestions(true)} 
           />
         </div>
